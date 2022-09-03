@@ -1,0 +1,5 @@
+rootProject.name = 'RESTApp'
+include 'persistence'
+include 'service'
+include 'web'
+
