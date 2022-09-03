@@ -1,5 +1,5 @@
 # REST API : People's system
-***
+
 ### General application requirements
 1. Use Spring Boot;
 2. Develop web-interface according to the REST approach;
