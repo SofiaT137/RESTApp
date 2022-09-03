@@ -1,6 +1,6 @@
-package com.test.repository;
+package com.example.repository;
 
-import com.test.entity.Address;
+import com.example.entity.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AddressRepository extends JpaRepository<Address, Long> {

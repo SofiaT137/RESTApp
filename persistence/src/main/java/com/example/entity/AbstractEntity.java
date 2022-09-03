@@ -1,7 +1,6 @@
-package com.test.entity;
+package com.example.entity;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
