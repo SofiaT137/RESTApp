@@ -25,9 +25,9 @@ public class Address extends AbstractEntity<Long>{
     private String city;
     private String street;
     @Column(name = "house_number")
-    private int houseNumber;
+    private Integer houseNumber;
     @Column(name = "office_number")
-    private int officeNumber;
+    private Integer officeNumber;
     private String postcode;
     @OneToMany(mappedBy = "address")
     @JsonManagedReference
@@ -45,8 +45,8 @@ public class Address extends AbstractEntity<Long>{
         if (!(o instanceof Address)) return false;
         if (!super.equals(o)) return false;
         Address address = (Address) o;
-        return getHouseNumber() == address.getHouseNumber()
-                && getOfficeNumber() == address.getOfficeNumber()
+        return Objects.equals(getHouseNumber(), address.getHouseNumber())
+                && Objects.equals(getOfficeNumber(), address.getOfficeNumber())
                 && Objects.equals(getPostcode(), address.getPostcode())
                 && Objects.equals(getCity(), address.getCity())
                 && Objects.equals(getStreet(), address.getStreet());
