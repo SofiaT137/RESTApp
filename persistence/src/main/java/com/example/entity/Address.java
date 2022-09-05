@@ -22,13 +22,13 @@ import java.util.Objects;
 @Table(name = "addresses")
 public class Address extends AbstractEntity<Long>{
 
-    private String country;
     private String city;
     private String street;
     @Column(name = "house_number")
     private int houseNumber;
     @Column(name = "office_number")
     private int officeNumber;
+    private String postcode;
     @OneToMany(mappedBy = "address")
     @JsonManagedReference
     @ToString.Exclude
@@ -47,14 +47,14 @@ public class Address extends AbstractEntity<Long>{
         Address address = (Address) o;
         return getHouseNumber() == address.getHouseNumber()
                 && getOfficeNumber() == address.getOfficeNumber()
-                && Objects.equals(getCountry(), address.getCountry())
+                && Objects.equals(getPostcode(), address.getPostcode())
                 && Objects.equals(getCity(), address.getCity())
                 && Objects.equals(getStreet(), address.getStreet());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getCountry(), getCity(),
+        return Objects.hash(super.hashCode(), getPostcode(), getCity(),
                 getStreet(), getHouseNumber(), getOfficeNumber());
     }
 }
