@@ -24,7 +24,7 @@ public class User extends AbstractEntity<Long> {
     private String lastName;
     private String login;
     private char[] password;
-    private LocalDateTime birthdate;
+    private LocalDateTime birthday;
     @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "address_id")

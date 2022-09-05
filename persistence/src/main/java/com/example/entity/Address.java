@@ -29,7 +29,6 @@ public class Address extends AbstractEntity<Long>{
     private int houseNumber;
     @Column(name = "office_number")
     private int officeNumber;
-    private int postcode;
     @OneToMany(mappedBy = "address")
     @JsonManagedReference
     @ToString.Exclude
@@ -48,7 +47,6 @@ public class Address extends AbstractEntity<Long>{
         Address address = (Address) o;
         return getHouseNumber() == address.getHouseNumber()
                 && getOfficeNumber() == address.getOfficeNumber()
-                && getPostcode() == address.getPostcode()
                 && Objects.equals(getCountry(), address.getCountry())
                 && Objects.equals(getCity(), address.getCity())
                 && Objects.equals(getStreet(), address.getStreet());
@@ -57,6 +55,6 @@ public class Address extends AbstractEntity<Long>{
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), getCountry(), getCity(),
-                getStreet(), getHouseNumber(), getOfficeNumber(), getPostcode());
+                getStreet(), getHouseNumber(), getOfficeNumber());
     }
 }

@@ -15,7 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findUserByFirstNameAndLastName(String firstName, String lastName);
 
-    Page<User> findByBirthdate(LocalDateTime birthdate, Pageable pageable);
+    Page<User> findByBirthday(LocalDateTime birthday, Pageable pageable);
 
     @Query(value = "select u from User u where u.address.id = :addressId")
     Page<User> findAllUserByFullAddress(Long addressId, Pageable pageable);
