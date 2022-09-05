@@ -1,4 +1,4 @@
-# REST API : People's system
+# REST API : People system
 
 ### General application requirements
 1. Use Spring Boot;
