@@ -29,6 +29,7 @@ subprojects {
 		implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 		implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		implementation 'org.springframework.security:spring-security-crypto:5.7.3'
 	}
 }
 
