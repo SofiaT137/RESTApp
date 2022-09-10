@@ -3,7 +3,9 @@ package com.example.conventer.impl;
 import com.example.conventer.Converter;
 import com.example.dto.AddressDto;
 import com.example.entity.Address;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AddressConverter implements Converter<Address, AddressDto> {
 
     @Override

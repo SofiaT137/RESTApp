@@ -4,13 +4,13 @@ import org.springframework.data.domain.Page;
 
 public interface CRUDService<T> {
 
-    T insert(T entity);
+    void insert(T entity);
 
     T getById(long id);
 
-    Page<T> getAll(int pageSize, int pageNumber);
+    Page<T> getAll(int pageNumber, int pageSize);
 
-    T update(Long id, T entity);
+    void update(Long id, T entity);
 
-    void delete(long id);
+    void delete(Long id);
 }

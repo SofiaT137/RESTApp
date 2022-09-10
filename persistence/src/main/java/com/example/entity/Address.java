@@ -1,11 +1,7 @@
 package com.example.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +16,7 @@ import java.util.Objects;
 @Setter
 @ToString
 @Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "addresses")
 public class Address extends AbstractEntity<Long>{

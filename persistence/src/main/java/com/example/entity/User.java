@@ -14,6 +14,7 @@ import java.util.Objects;
 @Builder
 @Table(name = "users")
 @NoArgsConstructor
+@AllArgsConstructor
 public class User extends AbstractEntity<Long> {
 
     @Column(name = "first_name")

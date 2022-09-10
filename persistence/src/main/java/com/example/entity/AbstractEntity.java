@@ -1,9 +1,6 @@
 package com.example.entity;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +13,8 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class AbstractEntity <K extends Serializable> {
 
     @Id
