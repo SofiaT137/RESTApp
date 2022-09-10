@@ -1,6 +1,7 @@
 package com.example.service.impl.logic_service;
 
 import com.example.entity.Address;
+import com.example.entity.User;
 import com.example.repository.AddressRepository;
 import com.example.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +73,10 @@ public class AddressLogicService implements AddressService<Address> {
     @Transactional
     public void delete(Long id) {
         Address address = getById(id);
+        for (User user:
+            address.getUserList()) {
+            address.deleteAddressFromUser(user);
+        }
         addressRepository.delete(address);
     }
 

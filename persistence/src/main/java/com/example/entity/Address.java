@@ -2,11 +2,9 @@ package com.example.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -36,6 +34,11 @@ public class Address extends AbstractEntity<Long>{
     public void addAddressToUser(User user){
         userList.add(user);
         user.setAddress(this);
+    }
+
+    public void deleteAddressFromUser(User user){
+        userList.remove(user);
+        user.setAddress(null);
     }
 
     @Override
