@@ -30,6 +30,7 @@ public class Address extends AbstractEntity<Long>{
     @OneToMany(mappedBy = "address")
     @JsonManagedReference
     @ToString.Exclude
+    @Builder.Default
     private List<User> userList = new ArrayList<>();
 
     public void addAddressToUser(User user){

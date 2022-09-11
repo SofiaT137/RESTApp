@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 public class UserDto extends RepresentationModel<UserDto> {
 
+    @Builder.Default
     private Long id = 0L;
     private String firstName;
     private String lastName;

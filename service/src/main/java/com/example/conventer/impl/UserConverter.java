@@ -2,7 +2,6 @@ package com.example.conventer.impl;
 
 import com.example.conventer.Converter;
 import com.example.dto.UserDto;
-import com.example.entity.AbstractEntity;
 import com.example.entity.User;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +24,7 @@ public class UserConverter implements Converter<User, UserDto> {
     @Override
     public UserDto convert(User value) {
         return UserDto.builder()
+                .id(value.getId())
                 .firstName(value.getFirstName())
                 .lastName(value.getLastName())
                 .login(value.getLogin())
