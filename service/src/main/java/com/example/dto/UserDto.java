@@ -1,6 +1,5 @@
 package com.example.dto;
 
-import com.example.entity.Address;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Data;
@@ -14,11 +13,12 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 public class UserDto extends RepresentationModel<UserDto> {
 
+    private Long id = 0L;
     private String firstName;
     private String lastName;
     private String login;
     private char[] password;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
     private LocalDateTime birthday;
-    private Address address;
+    private AddressDto address;
 }
