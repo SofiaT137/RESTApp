@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+import com.example.dto.AddressDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,10 +30,10 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-//    @PostMapping
-//    public ResponseEntity<Object> insertAddress(@RequestBody Address address){
-//        return new ResponseEntity<>(HttpStatus.CREATED);
-//    }
+    @PostMapping
+    public ResponseEntity<Object> insertAddress(@RequestBody AddressDto address){
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
     @PatchMapping("/{id}")
     public ResponseEntity<Object> updateAddress(Long id){
