@@ -73,9 +73,8 @@ public class AddressLogicService implements AddressService<Address> {
     @Transactional
     public void delete(Long id) {
         Address address = getById(id);
-        for (User user:
-            address.getUserList()) {
-            address.deleteAddressFromUser(user);
+        for (int i = 0; i < address.getUserList().size(); i++) {
+            address.deleteAddressFromUser(address.getUserList().get(i));
         }
         addressRepository.delete(address);
     }

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("peopleSystem/v1/address")
+@RequestMapping("peopleSystem/v1/addresses")
 public class AddressController {
 
     private AddressService<AddressDto> addressService;

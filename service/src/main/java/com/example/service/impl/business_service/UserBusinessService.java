@@ -1,10 +1,12 @@
 package com.example.service.impl.business_service;
 
 import com.example.conventer.impl.UserConverter;
+import com.example.dto.AddressDto;
 import com.example.dto.UserDto;
 import com.example.entity.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,12 @@ public class UserBusinessService implements UserService<UserDto> {
     @Autowired
     public UserBusinessService(UserConverter userConverter) {
         this.userConverter = userConverter;
+    }
+
+    @Autowired
+    @Qualifier("userLogicService")
+    public void setUserLogicService(UserService<User> userLogicService) {
+        this.userLogicService = userLogicService;
     }
 
     @Override

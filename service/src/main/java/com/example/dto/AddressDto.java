@@ -20,6 +20,4 @@ public class AddressDto extends RepresentationModel<AddressDto> {
     private Integer houseNumber;
     private Integer officeNumber;
     private String postcode;
-    private List<User> userList;
-
 }
