@@ -13,6 +13,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 public class AddressDto extends RepresentationModel<AddressDto> {
 
+    private Long id = 0L;
     private String city;
     private String street;
     private Integer houseNumber;

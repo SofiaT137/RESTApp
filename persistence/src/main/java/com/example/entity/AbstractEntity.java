@@ -13,7 +13,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor
 public abstract class AbstractEntity <K extends Serializable> {
 

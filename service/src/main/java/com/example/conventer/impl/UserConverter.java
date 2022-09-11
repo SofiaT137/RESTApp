@@ -2,6 +2,7 @@ package com.example.conventer.impl;
 
 import com.example.conventer.Converter;
 import com.example.dto.UserDto;
+import com.example.entity.AbstractEntity;
 import com.example.entity.User;
 import org.springframework.stereotype.Component;
 

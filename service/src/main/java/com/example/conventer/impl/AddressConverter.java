@@ -22,6 +22,7 @@ public class AddressConverter implements Converter<Address, AddressDto> {
     @Override
     public AddressDto convert(Address value) {
         return AddressDto.builder()
+                .id(value.getId())
                 .city(value.getCity())
                 .street(value.getStreet())
                 .houseNumber(value.getHouseNumber())
