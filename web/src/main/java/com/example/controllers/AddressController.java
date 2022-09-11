@@ -41,33 +41,33 @@ public class AddressController {
                                                               int pageNumber,
                                                   @RequestParam (defaultValue = "5", required = false)
                                                               int pageSize){
-        Page<AddressDto> userDtoList = addressService.getAll(pageNumber,pageSize);
-        userDtoList.forEach(addressDtoHateoas::addLinks);
-        return new ResponseEntity<>(HttpStatus.OK);
+        Page<AddressDto> addressDtoPage = addressService.getAll(pageNumber,pageSize);
+        addressDtoPage.forEach(addressDtoHateoas::addLinks);
+        return new ResponseEntity<>(addressDtoPage,HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Object> getAddressById(@PathVariable Long id){
         AddressDto addressDto = addressService.getById(id);
         addressDtoHateoas.addLinks(addressDto);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(addressDto, HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<Object> insertAddress(@RequestBody AddressDto address){
-        addressService.insert(address);
+    public ResponseEntity<Object> insertAddress(@RequestBody AddressDto addressDto){
+        addressService.insert(addressDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PatchMapping("/{id}")
     public ResponseEntity<Object> updateAddress(@PathVariable Long id,
-                                                @RequestBody AddressDto address){
-        addressService.update(id,address);
+                                                @RequestBody AddressDto addressDto){
+        addressService.update(id,addressDto);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteAddress(Long id){
+    public ResponseEntity<Object> deleteAddress(@PathVariable Long id){
         addressService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
