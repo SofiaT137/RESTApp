@@ -42,7 +42,7 @@ public class UserConverter implements Converter<User, UserDto> {
                 .login(value.getLogin())
                 .password(PROTECTED_INFO.toCharArray())
                 .birthday(value.getBirthday())
-                .address(addressConverter.convert(value.getAddress()))
+                .address(value.getAddress() == null ? null : addressConverter.convert(value.getAddress()))
                 .build();
     }
 }

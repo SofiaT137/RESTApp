@@ -18,7 +18,9 @@ public class UserHateoas implements Hateoas<UserDto> {
     @Override
     public void addLinks(UserDto entity) {
         entity.add(linkTo(methodOn(USER_CONTROLLER).getUserById(entity.getId())).withSelfRel());
-        entity.getAddress().add(linkTo(methodOn(ADDRESS_CONTROLLER).getAddressById(entity.getAddress()
-                .getId())).withSelfRel());
+        if(entity.getAddress() != null) {
+            entity.getAddress().add(linkTo(methodOn(ADDRESS_CONTROLLER).getAddressById(entity.getAddress()
+                    .getId())).withSelfRel());
+        }
     }
 }
