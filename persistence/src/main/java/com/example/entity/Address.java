@@ -1,15 +1,24 @@
 package com.example.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
-import org.hibernate.annotations.Cascade;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The "Address" class extends "AbstractEntity" class and presents creation of the "Address" entity
+ */
 @Entity
 @Getter
 @Setter
@@ -33,11 +42,10 @@ public class Address extends AbstractEntity<Long>{
     @Builder.Default
     private List<User> userList = new ArrayList<>();
 
-    public void addAddressToUser(User user){
-        userList.add(user);
-        user.setAddress(this);
-    }
-
+    /**
+     * Method "deleteAddressFromUser" removes the "Address" entity from the "User" entity
+     * @param user User entity
+     */
     public void deleteAddressFromUser(User user){
         userList.remove(user);
         user.setAddress(null);

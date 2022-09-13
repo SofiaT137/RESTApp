@@ -1,12 +1,24 @@
 package com.example.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * The "User" class extends "AbstractEntity" class and presents creation of the "User" entity
+ */
 @Entity
 @Getter
 @Setter
@@ -30,6 +42,10 @@ public class User extends AbstractEntity<Long> {
     @ToString.Exclude
     private Address address;
 
+    /**
+     * Method "addUserToAddress" adds the "User" entity to the "Address" entity
+     * @param address "Address" entity
+     */
     public void addUserToAddress(Address address){
         setAddress(address);
         address.getUserList().add(this);
